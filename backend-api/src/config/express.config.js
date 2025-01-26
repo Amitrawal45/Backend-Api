@@ -10,7 +10,6 @@ app.use(
 );
 
 app.use('/api/v1',router)
-
 app.use((req,res,next)=>{
   next({
     code : 404,
@@ -20,23 +19,19 @@ app.use((req,res,next)=>{
 })
 
 //Error handling middleware
-
 app.use((error,req,res,next)=>{
   let statusCode = error.code || 500
-  let detail = error.detail || null
+  let details = error.details || null
   let message = error.message || "Server Error"
   let status = error.status || "Internal server error"
 
   res.status(statusCode).json({
-    error:detail,
+    error:details,
     message:message,
     status:status,
     opions:null
   })
 })
-
-
-
 
 module.exports = app
 

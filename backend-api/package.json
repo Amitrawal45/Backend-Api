@@ -9,6 +9,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "backend-api": "file:",
     "express": "^4.21.2"
   }
 }
